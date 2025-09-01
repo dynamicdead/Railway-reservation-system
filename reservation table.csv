@@ -1,0 +1,21 @@
+pno,pname,age,phn,sname,dname,conformation,fare
+10821, Rahul Singh, 34, 9876543210, Delhi, Mumbai, y, 3500
+20456, Priya Sharma, 27, 9812345670, Chennai, Bangalore, y, 1800
+31987, Anil Kumar, 45, 9123456789, Hyderabad, Pune, n, 2200
+42765, Rani Verma, 61, 9765432109, Kolkata, Delhi, y, 4000
+53821, Sameer Iqbal, 29, 9954321876, Mumbai, Goa, y, 1200
+60943, Neha Gupta, 22, 9823415670, Jaipur, Ahmedabad, y, 1700
+71208, Rohit Mehra, 35, 9712345089, Delhi, Lucknow,n, 2500
+82364, Meena Joshi, 54, 9890102030, Pune, Kochi, y, 2800
+93412, Arvind Patel, 40, 9988776655, Surat, Bhopal,y, 1400
+10458, Seema Rai, 32, 9877654321, Bangalore, Chennai, y, 1500
+11592, Vijay Chauhan, 25, 9765432180, Hyderabad, Chennai, y, 2000
+12674, Sarita Singh, 60, 9654789021, Lucknow, Delhi, n, 2000
+13785, Karan Joshi, 30, 9543217680, Mumbai, Jaipur, y, 2700
+14829, Alok Yadav, 38, 9812345567, Delhi, Patna, y, 3200
+15963, Nisha Rai, 26, 9900112233, Bangalore, Hyderabad, y, 1300
+17084, Rajesh Bhatt, 50, 9821098765, Jaipur, Mumbai, y, 3800
+18127, Shruti Agarwal, 28, 9898765432, Kolkata, Varanasi,n, 2000
+19205, Akash Kumar, 32, 9776543210, Chennai, Bangalore, y, 1600
+20319, Pooja Thakur, 41, 9661234567, Surat, Lucknow, y, 2200
+21478, Devendra Verma, 47, 9556789012, Pune, Delhi, y, 3000

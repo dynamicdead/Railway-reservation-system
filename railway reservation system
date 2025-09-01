@@ -1,0 +1,105 @@
+import pandas as pd 
+import numpy as np
+import random 
+
+print(".......... Railway Reservation online .........")
+print()
+td=pd.read_csv("C:\\Users\\janvi\\Documents\\train details.csv")
+rt=pd.read_csv("C:\\Users\\janvi\\Documents\\reservation table.csv")
+def writecsv():
+    rt.to_csv("C:\\Users\\janvi\\Documents\\reservation table.csv",index=False)
+    td.to_csv("C:\\Users\\janvi\\Documents\\train details.csv",index=False)
+print("1.view train details")
+print("2.make a reservation")
+print("3.cancellation")
+print("4.view reservation details")
+print("5.update reservation details")
+print("6.view all reservation details")
+print("7.exit")
+ch=int(input("enter your choice:"))
+
+if ch==1 :
+#showing train details
+    print(td)
+elif ch==2:
+#making a reservation
+    name=input("enter your name:")
+    age=int(input("enter your age:"))
+    phn=int(input("enter your phone number:"))
+    sname=input("enter source station:")
+    dname=input("enter destination station:")
+    fare=random.randit(1000,4000)
+    pno=int(np.random.randint(10000,99999))
+    conf=(input("do you want a confirmation(y/n):"))
+    if conf=='y':
+        print("your ticket is confirmed")
+    rt.loc[len(rt.index)]=[pno,name,age,phn,sname,dname,conf,fare]
+    writecsv(rt)
+    print("your passanger number is:",pno)
+elif ch==3:
+#cancelling a ticket
+    pno=int(input("enter your passanger numberto canclel the ticket:"))
+    rt.drop(rt[rt.pno==pno].index, inplace=True)
+    writecsv(rt)
+    print("your ticket is cancelled")
+elif ch==4:
+#viewing reservation details
+    pno=int(input("enter your passanger number to view the reservation details:"))
+    print(rt[rt.pno==pno])
+elif ch==5:
+#updating reservation details
+    pno=int(input("enter your passanger number to update the reservation details:"))
+    print("what do you want to update?")
+    print("1.name")
+    print("2.age")
+    print("3.phone number")
+    print("4.source station")
+    print("5.destination station")
+    print("6.conformation")
+    up=int(input("enter your choice:"))
+    if up==1:
+    #updating name
+        name=input("enter your name:")
+        rt.loc[rt.pno==pno,'pname']=name
+        writecsv(rt)
+        print("name updated successfully")
+    elif up==2:
+    #updating age
+        age=int(input("enter your age:"))
+        rt.loc[rt.pno==pno,'age]=age']
+        writecsv(rt)
+        print("age updated succesfully")
+    elif up==3:
+    #updating phone number
+        phn=int(input("enter your phone number:"))
+        rt.loc[rt.pno==pno,'phn']=phn
+        writecsv(rt)
+        print("phone number updated successfully")
+    elif up==4:
+    #updating source station
+        sname=input("enter source station:")
+        rt.loc[rt.pno==pno,'sname']=sname
+        writecsv(rt)
+        print("source station updated successfully")
+    elif up==5:
+    #updating destination station
+        dname=input("enter destination station")
+        rt.loc[rt.pno==pno,'dname']=dname
+        writecsv(rt)
+        print("destination station updated successfully")
+    elif up==6:
+    #updating conformation
+        conf=(input("do you want a confirmation(y?n):"))
+        rt.loc[rt.pno==pno,'conf']=conf
+        writecsv(rt)
+        print("conformation updated successfully")
+    else:
+        print("invalid choice")
+elif ch==6:
+#viewing all reservation details
+    print(rt)
+elif ch==7:
+    #exiting the program
+    exit()
+else:
+    print("invalid choice")
