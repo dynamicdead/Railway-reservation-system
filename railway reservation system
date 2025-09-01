@@ -4,8 +4,8 @@ import random
 
 print(".......... Railway Reservation online .........")
 print()
-td=pd.read_csv("C:\\Users\\janvi\\Documents\\train details.csv")
-rt=pd.read_csv("C:\\Users\\janvi\\Documents\\reservation table.csv")
+td=pd.read_csv("C:\\Users\\Documents\\train details.csv")
+rt=pd.read_csv("C:\\Users\\Documents\\reservation table.csv")
 def writecsv():
     rt.to_csv("C:\\Users\\janvi\\Documents\\reservation table.csv",index=False)
     td.to_csv("C:\\Users\\janvi\\Documents\\train details.csv",index=False)
@@ -103,3 +103,4 @@ elif ch==7:
     exit()
 else:
     print("invalid choice")
+
