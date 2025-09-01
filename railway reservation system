@@ -4,8 +4,8 @@ import random
 
 print(".......... Railway Reservation online .........")
 print()
-td=pd.read_csv("C:\\Users\\Documents\\train details.csv")
-rt=pd.read_csv("C:\\Users\\Documents\\reservation table.csv")
+td=pd.read_csv("C:\\Users\\janvi\\Documents\\train details.csv")
+rt=pd.read_csv("C:\\Users\\janvi\\Documents\\reservation table.csv")
 def writecsv():
     rt.to_csv("C:\\Users\\janvi\\Documents\\reservation table.csv",index=False)
     td.to_csv("C:\\Users\\janvi\\Documents\\train details.csv",index=False)
@@ -28,19 +28,19 @@ elif ch==2:
     phn=int(input("enter your phone number:"))
     sname=input("enter source station:")
     dname=input("enter destination station:")
-    fare=random.randit(1000,4000)
+    fare=random.randint(1000,4000)
     pno=int(np.random.randint(10000,99999))
     conf=(input("do you want a confirmation(y/n):"))
     if conf=='y':
         print("your ticket is confirmed")
     rt.loc[len(rt.index)]=[pno,name,age,phn,sname,dname,conf,fare]
-    writecsv(rt)
+    writecsv()
     print("your passanger number is:",pno)
 elif ch==3:
 #cancelling a ticket
-    pno=int(input("enter your passanger numberto canclel the ticket:"))
+    pno=int(input("enter your passanger number to cancel the ticket:"))
     rt.drop(rt[rt.pno==pno].index, inplace=True)
-    writecsv(rt)
+    writecsv()
     print("your ticket is cancelled")
 elif ch==4:
 #viewing reservation details
@@ -61,37 +61,37 @@ elif ch==5:
     #updating name
         name=input("enter your name:")
         rt.loc[rt.pno==pno,'pname']=name
-        writecsv(rt)
+        writecsv()
         print("name updated successfully")
     elif up==2:
     #updating age
         age=int(input("enter your age:"))
-        rt.loc[rt.pno==pno,'age]=age']
-        writecsv(rt)
+        rt.loc[rt.pno==pno,'age']=age
+        writecsv()
         print("age updated succesfully")
     elif up==3:
     #updating phone number
         phn=int(input("enter your phone number:"))
         rt.loc[rt.pno==pno,'phn']=phn
-        writecsv(rt)
+        writecsv()
         print("phone number updated successfully")
     elif up==4:
     #updating source station
         sname=input("enter source station:")
         rt.loc[rt.pno==pno,'sname']=sname
-        writecsv(rt)
+        writecsv()
         print("source station updated successfully")
     elif up==5:
     #updating destination station
         dname=input("enter destination station")
         rt.loc[rt.pno==pno,'dname']=dname
-        writecsv(rt)
+        writecsv()
         print("destination station updated successfully")
     elif up==6:
     #updating conformation
         conf=(input("do you want a confirmation(y?n):"))
         rt.loc[rt.pno==pno,'conf']=conf
-        writecsv(rt)
+        writecsv()
         print("conformation updated successfully")
     else:
         print("invalid choice")
@@ -103,4 +103,5 @@ elif ch==7:
     exit()
 else:
     print("invalid choice")
+
 
