@@ -1,6 +1,39 @@
 import pandas as pd 
 import numpy as np
 import random 
+def main1():
+    user_details = pd.read_csv('user.csv')
+    print("---Railway System Login Portal---")
+    print("Welcome to Railway Reservation System Online Login Portal")
+    print("Please enter your login credentials:")
+    print("If you are a new user, please register first.")
+    while(True):
+        selection = input("Press '1' to Login or '2' to Register: ")
+        if selection == '1':
+            username = input("Enter your username: ")
+            password = input("Enter your password: ")
+            if username in user_details["uname"].values and password in user_details["password"].values:                
+                print("Login successful!")
+                break
+            else:
+                print("Invalid username or password. Please try again. if new user, please register first.")
+                continue
+        elif selection == '2':
+            pass
+            new_username = input("Enter your desired username: ")
+            if new_username in user_details.index:
+                print("Username already exists. Please try a different username.")
+                continue
+            new_password = input("Enter your desired password: ")
+            index = np.arange(len(user_details))
+            index = int(index[-1] + 1)
+            new_user = pd.DataFrame({'uname': [new_username], 'password': [new_password]})
+            user_details = pd.concat([user_details, new_user], ignore_index=True)
+            user_details.to_csv('user.csv')
+            print("Registration successful! You can now log in with your new credentials.")
+            continue
+            
+main1()
 
 print(".......... Railway Reservation online .........")
 print()
@@ -103,6 +136,7 @@ elif ch==7:
     exit()
 else:
     print("invalid choice")
+
 
 
 
